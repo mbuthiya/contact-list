@@ -51,3 +51,16 @@ def make_fav_contact(contact,birthday):
     '''
 
     return new_fav_contact = FavouriteContact(contact.first_name,contact.last_name,contact.phone_number,contact.email,birthday)
+
+def save_favourite_contact(fav_contact):
+    '''
+    Function to save a favourite contact
+    '''
+    fav_contact.save_fav_contact()
+
+
+def delete_favourite_contact(fav_contact):
+    '''
+    Function to delete a favourite contact
+    '''
+    fav_contact.delete_fav_contact()
