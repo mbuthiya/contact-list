@@ -15,9 +15,17 @@ def save_contact(contact):
     '''
     contact.save_contact()
 
-def delete_contact(contact,contact_list):
+def delete_contact(contact):
     '''
     Function to delete a contact
     '''
 
     contact.delete_contact()
+
+def find_contact(number):
+    '''
+    Function that finds a contact by number and returns the contact
+    '''
+
+    found_contact = Contact.find_by_number(number)
+    return found_contact
