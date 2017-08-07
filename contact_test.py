@@ -11,10 +11,16 @@ class TestContact(unittest.TestCase):
 
     def setUp(self):
         '''
-        Set up method to run before all other test cases
+        Set up method to run before each test cases.
         '''
-        self.new_contact = Contact("James","Muriuki","0712345678","james@ms.com")
+        self.new_contact = Contact("James","Muriuki","0712345678","james@ms.com") # create contact object
 
+
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Contact.contact_list = []
 
     def test_init(self):
         '''
