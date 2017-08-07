@@ -90,6 +90,13 @@ class TestContact(unittest.TestCase):
         self.assertEqual(found_contact.email,test_contact.email)
 
 
+    def test_display_all_contacts(self):
+        '''
+        method that returns a list of all contacts saved
+        '''
+
+        self.assertEqual(Contact.display_contacts(),Contact.contact_list)
+
 
 
 
