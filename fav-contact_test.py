@@ -32,5 +32,23 @@ class TestFavouriteContact(unittest.TestCase):
         self.new_fav_contact.save_fav_contact()
         self.assertEqual(len(FavouriteContact.favourite_contacts),1)
 
+
+    def test_delete_fav_contact(self):
+        '''
+        test_delete_fav_contact test to see if we can delete a favourite contact from our
+        list
+        '''
+
+        self.new_fav_contact.save_fav_contact()
+
+        test_fav_contact = FavouriteContact("test","user","0711223344","test@user.com",self.birthday)
+        test_fav_contact.save_fav_contact()
+
+        self.new_fav_contact.delete_fav_contact()
+        self.assertEqual(len(FavouriteContact.favourite_contacts),1)
+
+    
+
+
 if __name__ == "__main__":
     unittest.main()
