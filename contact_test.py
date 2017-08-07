@@ -90,7 +90,7 @@ class TestContact(unittest.TestCase):
         self.assertEqual(found_contact.email,test_contact.email)
 
 
-    def test_find_contact_non_existent_number(self):
+    def test_contact_exists(self):
         '''
         test to check if we can return a Boolean  if we cannot find the contact.
         '''
@@ -101,7 +101,7 @@ class TestContact(unittest.TestCase):
 
         contact_exists = Contact.contact_exist("0711223344")
 
-        self.asserTrue(contact_exist)
+        self.assertTrue(contact_exists)
 
 
     def test_display_all_contacts(self):
