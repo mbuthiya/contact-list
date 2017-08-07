@@ -54,7 +54,16 @@ class TestFavouriteContact(unittest.TestCase):
         self.assertEqual(len(FavouriteContact.favourite_contacts),1)
 
 
-    
+
+    def test_display_all_fav_contats(self):
+        '''
+        Test case tocheck if we can display all the favourite_contacts
+        '''
+
+        self.assertEqual(FavouriteContact.display_fav_contacts(),FavouriteContact.favourite_contacts)
+
+
+
 
 
 
