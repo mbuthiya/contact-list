@@ -34,3 +34,12 @@ class FavouriteContact(Contact):
         delete_fav_contact method that deletes the FavouriteContact object from a list
         '''
         FavouriteContact.favourite_contacts.remove(self)
+
+
+    @classmethod
+    def display_fav_contacts(cls):
+
+        '''
+        Class method that returns all the favourite contacts
+        '''
+        return cls.favourite_contacts
