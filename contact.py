@@ -52,10 +52,9 @@ class Contact:
             Contact of person that matches the number.
         '''
 
-        for contact in cls.contact_list:
-            if contact.phone_number == number:
-                return contact
+        found_contact = [contact for contact in cls.contact_list if contact.phone_number == number ]
 
+        return found_contact[0]
 
     @classmethod
     def display_contacts(cls):
