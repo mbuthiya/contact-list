@@ -30,8 +30,8 @@ def find_contact(number):
     Function that finds a contact by number and returns the contact
     '''
 
-    found_contact = Contact.find_by_number(number)
-    return found_contact
+
+    return Contact.find_by_number(number)
 
 
 def check_existing(number):
@@ -39,5 +39,13 @@ def check_existing(number):
     Function that check if a contact exists with that number and return a Boolean
     '''
 
-    is_existing = Contact.check_existing(number)
-    return is_existing
+
+    return Contact.check_existing(number)
+
+
+def display_all_contacts():
+    '''
+    Function that returns all the saved contacts
+    '''
+
+    return Contact.display_all_contacts()
