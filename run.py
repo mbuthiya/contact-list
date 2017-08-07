@@ -9,11 +9,13 @@ def create_contact(fname,lname,phone,email):
     return new_contact = Contact(fname,lname,phone,email)
 
 
+
 def save_contact(contact):
     '''
     Function to save contact
     '''
     contact.save_contact()
+
 
 def delete_contact(contact):
     '''
@@ -22,6 +24,7 @@ def delete_contact(contact):
 
     contact.delete_contact()
 
+
 def find_contact(number):
     '''
     Function that finds a contact by number and returns the contact
@@ -29,3 +32,12 @@ def find_contact(number):
 
     found_contact = Contact.find_by_number(number)
     return found_contact
+
+
+def check_existing(number):
+    '''
+    Function that check if a contact exists with that number and return a Boolean
+    '''
+
+    is_existing = Contact.check_existing(number)
+    return is_existing
