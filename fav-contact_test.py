@@ -13,6 +13,12 @@ class TestFavouriteContact(unittest.TestCase):
         self.new_fav_contact = FavouriteContact("James","Muriuki","0712345678","james@ms.com",self.birthday)
 
 
+    def tearDown(self):
+        '''
+        tearDown method that clears the favourite_contacts list
+        '''
+        FavouriteContact.favourite_contacts = []
+
     def test_init(self):
         '''
         Method to test  if new contact is instanciated correctly
@@ -48,6 +54,7 @@ class TestFavouriteContact(unittest.TestCase):
         self.assertEqual(len(FavouriteContact.favourite_contacts),1)
 
     
+
 
 
 if __name__ == "__main__":
