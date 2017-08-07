@@ -1,6 +1,7 @@
 #!virtual/bin/python3.6
 
 from contact import Contact
+from fav_contact import FavouriteContact
 
 def create_contact(fname,lname,phone,email):
     '''
@@ -43,3 +44,10 @@ def display_all_contacts():
     Function that returns all the saved contacts
     '''
     return Contact.display_all_contacts()
+
+def make_fav_contact(contact,birthday):
+    '''
+    Function to create a new favourite contact object
+    '''
+
+    return new_fav_contact = FavouriteContact(contact.first_name,contact.last_name,contact.phone_number,contact.email,birthday)
