@@ -7,3 +7,10 @@ def create_contact(fname,lname,phone,email):
     Function to create a new contact
     '''
     return new_contact = Contact(fname,lname,phone,email)
+
+
+def save_contact(contact):
+    '''
+    Function to save contact
+    '''
+    contact.save_contact()
