@@ -11,14 +11,14 @@ def create_contact(fname,lname,phone,email):
 
 
 
-def save_contact(contact):
+def save_contacts(contact):
     '''
     Function to save contact
     '''
     contact.save_contact()
 
 
-def delete_contact(contact):
+def del_contact(contact):
     '''
     Function to delete a contact
     '''
@@ -32,14 +32,14 @@ def find_contact(number):
     return Contact.find_by_number(number)
 
 
-def check_existing(number):
+def check_existing_contacts(number):
     '''
     Function that check if a contact exists with that number and return a Boolean
     '''
     return Contact.check_existing(number)
 
 
-def display_all_contacts():
+def display_contacts():
     '''
     Function that returns all the saved contacts
     '''
@@ -64,3 +64,11 @@ def delete_favourite_contact(fav_contact):
     Function to delete a favourite contact
     '''
     fav_contact.delete_fav_contact()
+
+def display_favourite_contacts():
+
+    '''
+    Function that displays all the favourite contacts
+    '''
+
+    return FavouriteContact.display_fav_contacts()
