@@ -21,7 +21,6 @@ def delete_contact(contact):
     '''
     Function to delete a contact
     '''
-
     contact.delete_contact()
 
 
@@ -29,8 +28,6 @@ def find_contact(number):
     '''
     Function that finds a contact by number and returns the contact
     '''
-
-
     return Contact.find_by_number(number)
 
 
@@ -38,8 +35,6 @@ def check_existing(number):
     '''
     Function that check if a contact exists with that number and return a Boolean
     '''
-
-
     return Contact.check_existing(number)
 
 
@@ -47,5 +42,4 @@ def display_all_contacts():
     '''
     Function that returns all the saved contacts
     '''
-
     return Contact.display_all_contacts()
