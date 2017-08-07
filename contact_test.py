@@ -65,5 +65,19 @@ class TestContact(unittest.TestCase):
         self.new_contact.delete_contact()# Deleting a contact object
         self.assertEqual(len(Contact.contact_list),1)
 
+
+    def test_delete_unsaved_contact(self):
+        '''
+        test_delete_unsaved_contact to confirm the method throws a valueError
+        '''
+        try:
+            self.new_contact.delete_contact()
+        except ValueError:
+            self.assertEqual(len(Contact.contact_list),0)
+
+
+
+
+
 if __name__ == '__main__':
     unittest.main() #Statement to compile the test cases and run them all

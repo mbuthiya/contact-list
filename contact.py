@@ -38,5 +38,5 @@ class Contact:
         '''
         delete_contact method deletes a saved contact from the contact_list
         '''
-
+        
         Contact.contact_list.remove(self)
