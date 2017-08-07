@@ -53,7 +53,9 @@ class TestFavouriteContact(unittest.TestCase):
         self.new_fav_contact.delete_fav_contact()
         self.assertEqual(len(FavouriteContact.favourite_contacts),1)
 
+
     
+
 
 
 
