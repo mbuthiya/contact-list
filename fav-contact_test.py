@@ -1,7 +1,7 @@
 import unittest
 from fav_contact import FavouriteContact
 from datetime import date
-from contact import Contact
+
 
 class TestFavouriteContact(unittest.TestCase):
     '''
@@ -11,7 +11,7 @@ class TestFavouriteContact(unittest.TestCase):
     def setUp(self):
         self.birthday = date(date.today().year,4,14)
         self.new_fav_contact = FavouriteContact("James","Muriuki","0712345678","james@ms.com",self.birthday)
-        self.new_contact = Contact("James","Muriuki","0712345678","james@ms.com")
+
 
     def test_init(self):
         '''
@@ -27,18 +27,10 @@ class TestFavouriteContact(unittest.TestCase):
 
     def test_save_fav_contact(self):
         '''
-        Test case to confirm a contact is saved from a regular contact to a favourite contact
+        test_save_fav_contact test to see if a favourite_contact is saved
         '''
-
-        FavouriteContact.save_fav_contact(self.new_contact,self.birthday)
+        self.new_fav_contact.save_fav_contact()
         self.assertEqual(len(FavouriteContact.favourite_contacts),1)
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     unittest.main()
