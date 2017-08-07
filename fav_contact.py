@@ -22,4 +22,15 @@ class FavouriteContact(Contact):
 
 
     def save_fav_contact(self):
+        '''
+        save_fav_contact method that saves the FavouriteContact object into a list
+        '''
+
         FavouriteContact.favourite_contacts.append(self)
+
+
+    def delete_fav_contact(self):
+        '''
+        delete_fav_contact method that deletes the FavouriteContact object from a list
+        '''
+        FavouriteContact.favourite_contacts.remove(self)
