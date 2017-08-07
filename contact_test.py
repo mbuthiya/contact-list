@@ -22,6 +22,7 @@ class TestContact(unittest.TestCase):
         '''
         Contact.contact_list = []
 
+
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
@@ -32,6 +33,7 @@ class TestContact(unittest.TestCase):
         self.assertEqual(self.new_contact.phone_number,"0712345678")
         self.assertEqual(self.new_contact.email,"james@ms.com")
 
+
     def test_save_contact(self):
         '''
         test_save_contact test case to test if the contact object is saved into
@@ -39,6 +41,7 @@ class TestContact(unittest.TestCase):
         '''
         self.new_contact.save_contact() # saving the new contact
         self.assertEqual(len(Contact.contact_list),1)
+
 
     def test_save_multiple_contact(self):
         '''
@@ -51,6 +54,16 @@ class TestContact(unittest.TestCase):
         self.assertEqual(len(Contact.contact_list),2)
 
 
+    def test_delete_contact(self):
+        '''
+        test_delete_contact to test if we can remove a contact from our contact list
+        '''
+        self.new_contact.save_contact()
+        test_contact = Contact("Test","user","0712345678","test@user.com") # new contact
+        test_contact.save_contact()
+
+        self.new_contact.delete_contact()# Deleting a contact object
+        self.assertEqual(len(Contact.contact_list),1)
 
 if __name__ == '__main__':
     unittest.main() #Statement to compile the test cases and run them all
