@@ -1,6 +1,6 @@
 import unittest
 from fav_contact import FavouriteContact
-from datetime import date
+
 
 
 class TestFavouriteContact(unittest.TestCase):
@@ -9,8 +9,8 @@ class TestFavouriteContact(unittest.TestCase):
     '''
 
     def setUp(self):
-        self.birthday = date(date.today().year,4,14)
-        self.new_fav_contact = FavouriteContact("James","Muriuki","0712345678","james@ms.com",self.birthday)
+
+        self.new_fav_contact = FavouriteContact("James","Muriuki","0712345678","james@ms.com","Jimbo")
 
 
     def tearDown(self):
@@ -28,7 +28,7 @@ class TestFavouriteContact(unittest.TestCase):
         self.assertEqual(self.new_fav_contact.last_name,"Muriuki")
         self.assertEqual(self.new_fav_contact.phone_number,"0712345678")
         self.assertEqual(self.new_fav_contact.email,"james@ms.com")
-        self.assertEqual(self.new_fav_contact.birthday.month,4)
+        self.assertEqual(self.new_fav_contact.nickname,"Jimbo")
 
 
     def test_save_fav_contact(self):
@@ -47,7 +47,7 @@ class TestFavouriteContact(unittest.TestCase):
 
         self.new_fav_contact.save_fav_contact()
 
-        test_fav_contact = FavouriteContact("test","user","0711223344","test@user.com",self.birthday)
+        test_fav_contact = FavouriteContact("test","user","0711223344","test@user.com","Jimbo")
         test_fav_contact.save_fav_contact()
 
         self.new_fav_contact.delete_fav_contact()
@@ -61,11 +61,6 @@ class TestFavouriteContact(unittest.TestCase):
         '''
 
         self.assertEqual(FavouriteContact.display_fav_contacts(),FavouriteContact.favourite_contacts)
-
-
-
-
-
 
 
 if __name__ == "__main__":

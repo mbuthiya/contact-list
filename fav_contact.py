@@ -11,13 +11,13 @@ class FavouriteContact(Contact):
 
     favourite_contacts = []
 
-    def __init__(self,first_name,last_name,phone_number,email,birthday):
+    def __init__(self,first_name,last_name,phone_number,email,nickname):
         '''
         __init__ method helping us create properties for our objects
 
         '''
         Contact.__init__(self,first_name,last_name,phone_number,email)
-        self.birthday = birthday
+        self.nickname = nickname
 
 
 
