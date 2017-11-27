@@ -78,32 +78,22 @@ def display_favourite_contacts():
 
 def main():
 
-    print("Hello Welcome to your contact list. What is your name?")
-    user_name = input()
+    user_name = input("Hello Welcome to your contact list. What is your name?")
 
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
 
     while True:
-        print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
-
-        short_code = input().lower()
+        short_code = input("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ").lower()
 
         if short_code == 'cc':
             print("New Contact")
             print("-"*10)
 
-            print ("First name ....")
-            f_name = input()
-
-            print("Last name ...")
-            l_name = input()
-
-            print("Phone number ...")
-            p_number = input()
-
-            print("Email address ...")
-            e_address = input()
+            f_name = input("First name: ")
+            l_name = input("Last name: ")
+            p_number = input("Phone number: ")
+            e_address = input("Email address:")
 
 
             save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new contact.
@@ -118,7 +108,7 @@ def main():
                 print('\n')
 
                 for contact in display_contacts():
-                    print(f"{contact.first_name} {contact.last_name} .....{contact.phone_number}")
+                    print(f"{contact.first_name} - {contact.last_name} : {contact.phone_number}")
 
                 print('\n')
             else:
@@ -128,16 +118,14 @@ def main():
 
         elif short_code == 'fc':
 
-            print("Enter the number you want to search for")
-
-            search_number = input()
+            search_number = input("Enter the number you want to search for")
             if check_existing_contacts(search_number):
                 search_contact = find_contact(search_number)
                 print(f"{search_contact.first_name} {search_contact.last_name}")
                 print('-' * 20)
 
-                print(f"Phone number.......{search_contact.phone_number}")
-                print(f"Email address.......{search_contact.email}")
+                print(f"Phone number: {search_contact.phone_number}")
+                print(f"Email address: {search_contact.email}")
             else:
                 print("That contact does not exist")
 
